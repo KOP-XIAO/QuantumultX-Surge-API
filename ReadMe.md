@@ -75,5 +75,5 @@ https://dove.589669.xyz/Mix2Surge?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscri
 
 
 
-<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7t5yfbhfvj30u00u0ta4.jpg" style="height:300px" />
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7t6di3i9oj30gg0g240w.jpg" style="height:300px" />
 
