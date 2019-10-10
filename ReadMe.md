@@ -65,5 +65,15 @@ https://dove.589669.xyz/Mix2Surge?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscri
 
 ### 0⃣️ 打赏名单
 
-鸡儿硬梆梆
+- 鸡儿硬梆梆
+- 🐔哥｜法外 伉俪
+- 贝贝熊🐻
+
+
+
+**如果觉得有用，请大胆打赏**
+
+
+
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7t5yfbhfvj30u00u0ta4.jpg" style="zoom:33%;" />
 
