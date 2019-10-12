@@ -13,14 +13,14 @@
 
 ### A. QuantumultX
 
-| QuantumultX API | 参数      | 说明 | 要求                                     | 状态 |
-| --------------- | --------- | ---- | ---------------------------------------- | ---- |
-| 路径            | sub2quanx | NA   | https://dove.589669.xyz/sub2quanx?       | NA   |
-| 类型            | type      | 必须 | ss/ssr                                   | ✅    |
-| 订阅链接        | sub       | 必须 | 务必先对链接urlencode，多个订阅用 + 连接 | ✅    |
-| 正则过滤节点    | filter    | 可选 | 务必先对参数urlencode                    | ✅    |
-| UDP强制更改     | udp       | 可选 | 参数为1，或0 （默认为0）                 | ✅    |
-| TFO强制更改     | tfo       | 可选 | 参数为1，或0（默认为0）                  | ✅    |
+| QuantumultX API | 参数      | 说明 | 要求                                            | 状态 |
+| --------------- | --------- | ---- | ----------------------------------------------- | ---- |
+| 路径            | sub2quanx | NA   | https://dove.589669.xyz/sub2quanx?              | NA   |
+| 类型            | type      | 必须 | ss/ssr/surge (surge的托管conf与list均可)        | ✅    |
+| 订阅链接        | sub       | 必须 | 务必先对链接urlencode，多个订阅用 + 连接        | ✅    |
+| 正则过滤节点    | filter    | 可选 | 务必先对参数urlencode                           | ✅    |
+| UDP强制更改     | udp       | 可选 | 参数为1，或0 （默认为0，关闭），对surge类型无效 | ✅    |
+| TFO强制更改     | tfo       | 可选 | 参数为1，或0（默认为0，关闭），对surge类型无效  | ✅    |
 
 > 完整示范：将dler的ss订阅链接转换，并只取其中名字含 “**日本**” 的节点
 
@@ -32,7 +32,7 @@
 
 #### Todo
 
-- [ ]  增加对 surge conf以及list链接 的转换支持；
+- [x]  增加对 surge conf以及list链接 的转换支持；
 - [ ] 国旗 emoji的支持？
 
 
@@ -50,6 +50,7 @@
 | 订阅(托管)链接      | sub       | 必须 | 务必先对链接urlencode，多个订阅用 + 号连接                   | ✅    |
 | 正则过滤节点        | filter    | 可选 | 务必先对参数urlencode                                        | ✅    |
 | v2订阅的header host | hd        | 可选 | hd=1，0 （为解决某些v2ray订阅在surge中不可用的情况，为0时，忽略header参数） | ✅    |
+| UDP/TFO参数         | udp/tfo   | 可选 | 仅对type为ss的类型有效（tfo=1/0，udp=1/0 来开启/关闭，默认关闭） | ✅    |
 
 > 完整示范： 将某两个V2订阅合并转换成surge的list，并只选择其中的 **CHT ** 节点路线
 
