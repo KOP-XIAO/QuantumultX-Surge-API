@@ -4,8 +4,8 @@
 
 用于QuantumultX & Surge两个iOS客户端，详细来说：
 
-- **QuantumultX**：从 SS订阅/SSR订阅 转换成quantumultx格式的订阅，并提供正则过滤，以及UDP/TFO参数的修改，以及多个订阅（托管）的合并等；
-- **Surge**：从 Surge(conf&list)/SS订阅/V2ray订阅，转换成Surge list的格式链接，并提供正则过滤，多个订阅（托管）链接合并等
+- **QuantumultX**：从 ***SS订阅/SSR订阅/V2ray 订阅/Surge(conf&list)*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO参数的修改，以及多个订阅（托管）的合并等；
+- **Surge**：从 ***Surge(conf&list)/SS订阅/V2ray订阅***，转换成 **Surge list**的格式链接，并提供正则过滤，多个订阅（托管）链接合并等
 
 
 
@@ -16,7 +16,7 @@
 | QuantumultX API | 参数      | 说明 | 要求                                            | 状态 |
 | --------------- | --------- | ---- | ----------------------------------------------- | ---- |
 | 路径            | sub2quanx | NA   | https://dove.589669.xyz/sub2quanx?              | NA   |
-| 类型            | type      | 必须 | ss/ssr/surge (surge的托管conf与list均可)        | ✅    |
+| 类型            | type      | 必须 | ss/ssr/v2/surge (surge的托管conf与list均可)     | ✅    |
 | 订阅链接        | sub       | 必须 | 务必先对链接urlencode，多个订阅用 + 连接        | ✅    |
 | 正则过滤节点    | filter    | 可选 | 务必先对参数urlencode                           | ✅    |
 | UDP强制更改     | udp       | 可选 | 参数为1，或0 （默认为0，关闭），对surge类型无效 | ✅    |
@@ -26,14 +26,8 @@
 
 ```
 `https://dove.589669.xyz/sub2quanx?type=ss&tfo=1&udp=1&sub=https://dler.cloud/link/xxxx?mu=ss&filter=.*%E6%97%A5%E6%9C%AC`
+
 ```
-
-
-
-#### Todo
-
-- [x]  增加对 surge conf以及list链接 的转换支持；
-- [ ] 国旗 emoji的支持？
 
 
 
