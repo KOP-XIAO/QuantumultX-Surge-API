@@ -4,8 +4,8 @@
 
 用于QuantumultX & Surge两个iOS客户端，详细来说：
 
-- **QuantumultX**：从 ***SS订阅/SSR订阅/V2ray 订阅/Surge(conf&list)*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO参数的修改，以及多个订阅（托管）的合并等；
-- **Surge**：从 ***Surge(conf&list)/SS订阅/V2ray订阅***，转换成 **Surge list**的格式链接，并提供正则过滤，多个订阅（托管）链接合并等
+- **QuantumultX**：从 ***SS订阅/SSR订阅/V2ray 订阅/Surge(conf&list)*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加；
+- **Surge**：从 ***Surge(conf&list)/SS订阅/V2ray订阅***，转换成 **Surge list**的格式链接，并提供正则过滤，多个订阅（托管）链接合并，以及emoji旗帜添加等
 
 
 
@@ -60,13 +60,7 @@ https://dove.589669.xyz/Mix2Surge?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscri
 
 ---
 
-### 0⃣️ 打赏名单
-
-**如果觉得有用，请大胆打赏**
-
-
-
-<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7t6di3i9oj30gg0g240w.jpg" style="height:300px" />
+### 0⃣️ 请咖啡☕️名单
 
 🙏感谢🙏
 
@@ -76,4 +70,10 @@ https://dove.589669.xyz/Mix2Surge?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscri
 - 守夜人
 - Big Cat
 - Xin
+
+**如果觉得有用，请大胆请喝咖啡☕️**
+
+<img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7t6di3i9oj30gg0g240w.jpg" style="height:300px" />
+
+
 
