@@ -21,12 +21,12 @@
 | 正则过滤节点        | filter    | 可选 | 务必先对参数urlencode                                        | ✅    |
 | UDP强制更改         | udp       | 可选 | 参数为1，或0 （默认为0，关闭），对surge类型无效              | ✅    |
 | TFO强制更改         | tfo       | 可选 | 参数为1，或0（默认为0，关闭），对surge类型无效               | ✅    |
-| emoji 国家/地区符号 | emoji     | 可选 | 参数为 1，2（用于国行手机，无法显示台湾地区旗帜），默认为 0 关闭 | ✅    |
+| emoji 国家/地区符号 | emoji     | 可选 | 参数为 1，2（用于国行手机，解决无法显示台湾地区旗帜的问题），默认为 0 关闭 | ✅    |
 
-> 完整示范：将dler的ss订阅链接转换，并只取其中名字含 “**日本**” 的节点
+> 完整示范：将dler的ss订阅链接转换，并只取其中名字含 “**日本**” 的节点，并添加 emoji
 
 ```
-`https://dove.589669.xyz/sub2quanx?type=ss&tfo=1&udp=1&sub=https://dler.cloud/link/xxxx?mu=ss&filter=.*%E6%97%A5%E6%9C%AC`
+`https://dove.589669.xyz/sub2quanx?type=ss&tfo=1&udp=1&emoji=2&sub=https%3A%2F%2Fdler.cloud%2Flink%2Fxxxx%3Fmu%3Dss&filter=.*%E6%97%A5%E6%9C%AC`
 
 ```
 
@@ -46,7 +46,7 @@
 | 正则过滤节点        | filter    | 可选 | 务必先对参数urlencode                                        | ✅    |
 | v2订阅的header host | hd        | 可选 | hd=1，0 （为解决某些v2ray订阅在surge中不可用的情况，为0时，忽略header参数） | ✅    |
 | UDP/TFO参数         | udp/tfo   | 可选 | 仅对type为ss的类型有效（tfo=1/0，udp=1/0 来开启/关闭，默认关闭） | ✅    |
-| emoji 国家/地区符号 | emoji     | 可选 | 参数为 1，2（用于国行手机，无法显示台湾地区旗帜），默认为 0 关闭 | ✅    |
+| emoji 国家/地区符号 | emoji     | 可选 | 参数为 1，2（用于国行手机，解决无法显示台湾地区旗帜的问题），默认为 0 关闭 | ✅    |
 
 > 完整示范： 将某两个V2订阅合并转换成surge的list，并只选择其中的 **CHT ** 节点路线
 
