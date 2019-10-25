@@ -4,14 +4,17 @@
 
 用于QuantumultX & Surge两个iOS客户端，详细来说：
 
-- **QuantumultX**：从 ***SS订阅/SSD订阅/SSR订阅/V2ray 订阅/Surge(conf&list)*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加，以及简单的节点重命名；
+- **QuantumultX**：从 ***SS订阅/SSD订阅/SSR订阅/V2ray 订阅/Surge(conf&list)/QuanX*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加，以及简单的节点重命名；
 - **Surge**：从 ***Surge(conf&list)/SS订阅/SSD订阅/V2ray订阅***，转换成 **Surge list**的格式链接，并提供正则过滤，多个订阅（托管）链接合并，以及emoji旗帜添加，以及简单的节点重命名等
+
+-----
 
 **更新说明：**
 
 - 2019-10-15: 增加对emoji旗帜的支持
 - 2019-10-18: 增加rename参数，进行简单重命名
-- 2019-10-19： 增加对SSD订阅的转换支持
+- 2019-10-19: 增加对SSD订阅的转换支持
+- 2019-10-25: 增加对quantumult X 类型的自我转换(正则过滤，emoji rename 等)
 
 ## II. 使用说明
 
@@ -23,8 +26,8 @@
 | 类型                | type      | 必须 | ss/ssd/ssr/v2/surge (surge的托管conf与list均可)              | ✅    |
 | 订阅链接            | sub       | 必须 | 务必先对链接urlencode，多个订阅用 + 连接                     | ✅    |
 | 正则过滤节点        | filter    | 可选 | 务必先对参数urlencode                                        | ✅    |
-| UDP强制更改         | udp       | 可选 | 参数为1，或0 （默认为0，关闭），对surge类型无效              | ✅    |
-| TFO强制更改         | tfo       | 可选 | 参数为1，或0（默认为0，关闭），对surge类型无效               | ✅    |
+| UDP强制更改         | udp       | 可选 | 参数为1，或0 （默认为0，关闭），对surge/quanx类型无效        | ✅    |
+| TFO强制更改         | tfo       | 可选 | 参数为1，或0（默认为0，关闭），对surge/quanx类型无效         | ✅    |
 | emoji 国家/地区符号 | emoji     | 可选 | 参数为 1，2（用于国行手机，解决无法显示台湾地区旗帜的问题），默认为 0 关闭 | ✅    |
 | 节点重命名          | rename    | 可选 | 格式为 rename=oldname@newname，例如将香港替换成HK，则：香港@HK (记得urlencode) | ✅    |
 
@@ -34,7 +37,9 @@
 `https://dove.589669.xyz/sub2quanx?type=ss&tfo=1&udp=1&emoji=2&sub=https%3A%2F%2Fdler.cloud%2Flink%2Fxxxx%3Fmu%3Dss&filter=.*%E6%97%A5%E6%9C%AC&rename=%E6%97%A5%E6%9C%AC%40JP`
 ```
 
+如果你想过滤多个参数，比如 **日本** 或者 韩国 可以使用  .*(日本|韩国)
 
+ 更多更灵活的操作，自行学习 正则：https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md
 
 ---------
 
@@ -76,6 +81,8 @@ https://dove.589669.xyz/Mix2Surge?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscri
 - Big Cat
 - Xin
 - 锄禾
+- 弥彦
+- Miao ~ socloud
 
 **如果觉得有用，请大胆请喝咖啡☕️**
 
