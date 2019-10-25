@@ -23,7 +23,7 @@
 | QuantumultX API     | 参数      | 说明 | 要求                                                         | 状态 |
 | ------------------- | --------- | ---- | ------------------------------------------------------------ | ---- |
 | 路径                | sub2quanx | NA   | https://dove.589669.xyz/sub2quanx?                           | NA   |
-| 类型                | type      | 必须 | ss/ssd/ssr/v2/surge (surge的托管conf与list均可)              | ✅    |
+| 类型                | type      | 必须 | ss/ssd/ssr/v2/surge/quanx (surge的托管conf与list均可)        | ✅    |
 | 订阅链接            | sub       | 必须 | 务必先对链接urlencode，多个订阅用 + 连接                     | ✅    |
 | 正则过滤节点        | filter    | 可选 | 务必先对参数urlencode                                        | ✅    |
 | UDP强制更改         | udp       | 可选 | 参数为1，或0 （默认为0，关闭），对surge/quanx类型无效        | ✅    |
