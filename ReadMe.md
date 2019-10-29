@@ -15,6 +15,7 @@
 - 2019-10-18: 增加rename参数，进行简单重命名
 - 2019-10-19: 增加对SSD订阅的转换支持
 - 2019-10-25: 增加对quantumult X 类型的自我转换(正则过滤，emoji rename 等)
+- 2019-10-29: emoji的json文件，有问题请指出
 
 ## II. 使用说明
 
@@ -84,6 +85,7 @@ https://dove.589669.xyz/Mix2Surge?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscri
 - 弥彦
 - Miao ~ socloud
 - 非主流 李克斯 关下门
+- yumemi
 
 **如果觉得有用，请大胆请喝咖啡☕️**
 
