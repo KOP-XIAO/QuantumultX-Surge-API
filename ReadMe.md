@@ -4,8 +4,8 @@
 
 用于QuantumultX & Surge两个iOS客户端，详细来说：
 
-- **QuantumultX**：从 ***SS订阅/SSD订阅/SSR订阅/V2ray 订阅/Surge(conf&list)/QuanX*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加，以及简单的节点重命名；
-- **Surge**：从 ***Surge(conf&list)/SS订阅/SSD订阅/V2ray订阅***，转换成 **Surge list**的格式链接，并提供正则过滤，多个订阅（托管）链接合并，以及emoji旗帜添加，以及简单的节点重命名等
+- **QuantumultX**：从 ***SS订阅/SSD订阅/SSR订阅/V2rayN 订阅/Surge(conf&list)/QuanX*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名；
+- **Surge**：从 ***Surge(conf&list)/SS订阅/SSD订阅/V2rayN订阅***，转换成 **Surge list**的格式链接，并提供正则过滤，多个订阅（托管）链接合并，以及emoji旗帜添加/删除，以及简单的节点重命名等
 
 -----
 
@@ -16,6 +16,7 @@
 - 2019-10-19: 增加对SSD订阅的转换支持
 - 2019-10-25: 增加对quantumult X 类型的自我转换(正则过滤，emoji rename 等)
 - 2019-10-29: emoji的json文件，有问题请指出
+- 2019-10-30: 增加emoji旗帜删除参数，&emoji=-1
 
 ## II. 使用说明
 
@@ -29,7 +30,7 @@
 | 正则过滤节点        | filter    | 可选 | 务必先对参数urlencode                                        | ✅    |
 | UDP强制更改         | udp       | 可选 | 参数为1，或0 （默认为0，关闭），对surge/quanx类型无效        | ✅    |
 | TFO强制更改         | tfo       | 可选 | 参数为1，或0（默认为0，关闭），对surge/quanx类型无效         | ✅    |
-| emoji 国家/地区符号 | emoji     | 可选 | 参数为 1，2（用于国行手机，解决无法显示台湾地区旗帜的问题），默认为 0 关闭 | ✅    |
+| emoji 国家/地区符号 | emoji     | 可选 | 参数为 -1(删除旗帜)，1，2(用于国行手机，解决无法显示台湾地区旗帜🇹🇼的问题) | ✅    |
 | 节点重命名          | rename    | 可选 | 格式为 rename=oldname@newname，例如将香港替换成HK，则：香港@HK (记得urlencode) | ✅    |
 
 > 完整示范：将dler的ss订阅链接转换，并只取其中名字含 “**日本**” 的节点，并添加 emoji，以及将节点名中的“日本”替换为“JP”
@@ -56,7 +57,7 @@
 | 正则过滤节点        | filter    | 可选 | 务必先对参数urlencode                                        | ✅    |
 | v2订阅的header host | hd        | 可选 | hd=1，0 （为解决某些v2ray订阅在surge中不可用的情况，为0时，忽略header参数） | ✅    |
 | UDP/TFO参数         | udp/tfo   | 可选 | 仅对type为ss的类型有效（tfo=1/0，udp=1/0 来开启/关闭，默认关闭） | ✅    |
-| emoji 国家/地区符号 | emoji     | 可选 | 参数为 1，2（用于国行手机，解决无法显示台湾地区旗帜的问题），默认为 0 关闭 | ✅    |
+| emoji 国家/地区符号 | emoji     | 可选 | 参数为 -1(删除旗帜)，1，2(用于国行手机，解决无法显示台湾地区旗帜🇹🇼的问题) | ✅    |
 | 节点重命名          | rename    | 可选 | 格式为 rename=oldname@newname，例如将香港替换成HK，则：香港@HK (记得urlencode) | ✅    |
 
 > 完整示范： 将某两个V2订阅合并转换成surge的list，并只选择其中的 **CHT ** 节点路线
