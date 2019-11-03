@@ -17,21 +17,26 @@
 - 2019-10-25: 增加对quantumult X 类型的自我转换(正则过滤，emoji rename 等)
 - 2019-10-29: emoji的json文件，有问题请指出
 - 2019-10-30: 增加emoji旗帜删除参数，&emoji=-1
+- 2019-11-03: rename 功能增强：节点名 前/后 增加字符
+
+------
+
+----
 
 ## II. 使用说明
 
 ### A. QuantumultX
 
-| QuantumultX API     | 参数      | 说明 | 要求                                                         | 状态 |
-| ------------------- | --------- | ---- | ------------------------------------------------------------ | ---- |
-| 路径                | sub2quanx | NA   | https://dove.589669.xyz/sub2quanx?                           | NA   |
-| 类型                | type      | 必须 | ss/ssd/ssr/v2/surge/quanx (surge的托管conf与list均可)        | ✅    |
-| 订阅链接            | sub       | 必须 | 务必先对链接urlencode，多个订阅用 + 连接                     | ✅    |
-| 正则过滤节点        | filter    | 可选 | 务必先对参数urlencode                                        | ✅    |
-| UDP强制更改         | udp       | 可选 | 参数为1，或0 （默认为0，关闭），对surge/quanx类型无效        | ✅    |
-| TFO强制更改         | tfo       | 可选 | 参数为1，或0（默认为0，关闭），对surge/quanx类型无效         | ✅    |
-| emoji 国家/地区符号 | emoji     | 可选 | 参数为 -1(删除旗帜)，1，2(用于国行手机，解决无法显示台湾地区旗帜🇹🇼的问题) | ✅    |
-| 节点重命名          | rename    | 可选 | 格式为 rename=oldname@newname，例如将香港替换成HK，则：香港@HK (记得urlencode) | ✅    |
+| QuantumultX API     | 参数      | 说明                | 要求                                                         | 状态 |
+| ------------------- | --------- | ------------------- | ------------------------------------------------------------ | ---- |
+| 路径                | sub2quanx | NA                  | https://dove.589669.xyz/sub2quanx?                           | NA   |
+| 类型                | type      | 必须                | ss/ssd/ssr/v2/surge/quanx (surge的托管conf与list均可)        | ✅    |
+| 订阅链接            | sub       | 必须，请先urlencode | 务必先对链接urlencode，多个订阅用 + 连接                     | ✅    |
+| 正则过滤节点        | filter    | 可选，请先urlencode | 务必先对参数urlencode                                        | ✅    |
+| UDP强制更改         | udp       | 可选                | 参数为1，或0 （默认为0，关闭），对surge/quanx类型无效        | ✅    |
+| TFO强制更改         | tfo       | 可选                | 参数为1，或0（默认为0，关闭），对surge/quanx类型无效         | ✅    |
+| emoji 国家/地区符号 | emoji     | 可选                | 参数为 -1(删除旗帜)，1，2(用于国行手机，解决无法显示台湾地区旗帜🇹🇼的问题)；<br />另有参数 11， 22，将emoji添加在节点名尾部（如：日本 IPLC 🇯🇵） | ✅    |
+| 节点重命名          | rename    | 可选，请先urlencode | - 格式为 rename=oldname@newname，多个rename可用+链接：<br />- 例如将 香港替换成HK，日本替换成JP，则参数为：香港@HK+日本@JP (记得拿去urlencode)<br />- 在名字前/后增加字符，可分别用 A@ 跟 @B等单参数，例如：<br />- 在节点前增加 [SS]，节点名尾增加 [IPLC], 则rename参数为：[SS]@+@[IPLC] | ✅    |
 
 > 完整示范：将dler的ss订阅链接转换，并只取其中名字含 “**日本**” 的节点，并添加 emoji，以及将节点名中的“日本”替换为“JP”
 
@@ -49,16 +54,16 @@
 
 ### B. Surge
 
-| Surge API           | 参数      | 说明 | 要求                                                         | 状态 |
-| ------------------- | --------- | ---- | ------------------------------------------------------------ | ---- |
-| 路径                | Mix2Surge | NA   | https://dove.589669.xyz/Mix2Surge?                           | NA   |
-| 类型                | type      | 必须 | ss/ssd/v2/surge   （其中，surge参数对conf托管跟list通用）    | ✅    |
-| 订阅(托管)链接      | sub       | 必须 | 务必先对链接urlencode，多个订阅用 + 号连接                   | ✅    |
-| 正则过滤节点        | filter    | 可选 | 务必先对参数urlencode                                        | ✅    |
-| v2订阅的header host | hd        | 可选 | hd=1，0 （为解决某些v2ray订阅在surge中不可用的情况，为0时，忽略header参数） | ✅    |
-| UDP/TFO参数         | udp/tfo   | 可选 | 仅对type为ss的类型有效（tfo=1/0，udp=1/0 来开启/关闭，默认关闭） | ✅    |
-| emoji 国家/地区符号 | emoji     | 可选 | 参数为 -1(删除旗帜)，1，2(用于国行手机，解决无法显示台湾地区旗帜🇹🇼的问题) | ✅    |
-| 节点重命名          | rename    | 可选 | 格式为 rename=oldname@newname，例如将香港替换成HK，则：香港@HK (记得urlencode) | ✅    |
+| Surge API           | 参数      | 说明                | 要求                                                         | 状态 |
+| ------------------- | --------- | ------------------- | ------------------------------------------------------------ | ---- |
+| 路径                | Mix2Surge | NA                  | https://dove.589669.xyz/Mix2Surge?                           | NA   |
+| 类型                | type      | 必须                | ss/ssd/v2/surge   （其中，surge参数对conf托管跟list通用）    | ✅    |
+| 订阅(托管)链接      | sub       | 必须，请先urlencode | 务必先对链接urlencode，多个订阅用 + 号连接                   | ✅    |
+| 正则过滤节点        | filter    | 可选，请先urlencode | 务必先对参数urlencode                                        | ✅    |
+| v2订阅的header host | hd        | 可选                | hd=1，0 （为解决某些v2ray订阅在surge中不可用的情况，为0时，忽略header参数） | ✅    |
+| UDP/TFO参数         | udp/tfo   | 可选                | 仅对type为ss的类型有效（tfo=1/0，udp=1/0 来开启/关闭，默认关闭） | ✅    |
+| emoji 国家/地区符号 | emoji     | 可选                | 参数为 -1(删除旗帜)，1，2(用于国行手机，解决无法显示台湾地区旗帜🇹🇼的问题)；<br />另有参数 11， 22，将emoji添加在节点名尾部（如：日本 IPLC 🇯🇵） | ✅    |
+| 节点重命名          | rename    | 可选，请先urlencode | 1. 格式为 rename=oldname@newname，多个rename可用+链接：<br />- 例如将 香港替换成HK，日本替换成JP，则参数为：香港@HK+日本@JP (记得拿去urlencode)<br /> 2. 在名字前/后增加字符，可分别用 A@ 跟 @B等单参数，例如：<br />- 在节点前增加 [SS]，节点名尾增加 [IPLC], 则rename参数为：[SS]@+@[IPLC]<br />1跟2是可以混用的，比如 “[SS]@+@[IPLC]+香港@HK+日本@JP” | ✅    |
 
 > 完整示范： 将某两个V2订阅合并转换成surge的list，并只选择其中的 **CHT ** 节点路线
 
