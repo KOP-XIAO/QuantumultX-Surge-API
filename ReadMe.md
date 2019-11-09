@@ -20,6 +20,7 @@
 - 2019-10-30: 增加emoji旗帜删除参数，&emoji=-1
 - 2019-11-03: rename 功能增强：节点名 前/后 增加字符
 - 2019-11-06: 增加将订阅转换成 QuantumultX 配置
+- 2019-11-09: 增加按节点名排序参数 sort
 
 ------
 
@@ -34,28 +35,29 @@
 | 服务器订阅转换API   | 参数      | 说明                    | 要求                                                         | 状态 |
 | ------------------- | --------- | ----------------------- | ------------------------------------------------------------ | ---- |
 | 路径                | sub2quanx | NA                      | https://dove.589669.xyz/sub2quanx?                           | NA   |
-| 类型                | type      | 必须                    | ss/ssd/ssr/v2/surge/quanx (surge的托管conf与list均可)        | ✅    |
+| 链接类型            | type      | 必须                    | ss/ssd/ssr/v2/surge/quanx (surge的托管conf与list均可)        | ✅    |
 | 订阅链接            | sub       | 必须，请先**urlencode** | 务必先对链接**urlencode**，多个订阅用 + 连接                 | ✅    |
 | 正则过滤节点        | filter    | 可选，请先**urlencode** | 务必先对参数**urlencode**，从开头开始匹配，所以建议从  .* 开始 | ✅    |
 | UDP强制更改         | udp       | 可选                    | 参数为1，或0 （默认为0，关闭），对surge/quanx类型无效        | ✅    |
 | TFO强制更改         | tfo       | 可选                    | 参数为1，或0（默认为0，关闭），对surge/quanx类型无效         | ✅    |
 | emoji 国家/地区符号 | emoji     | 可选                    | 参数为 -1(删除旗帜)，1，2(用于国行手机，解决无法显示台湾地区旗帜🇹🇼的问题)；<br />另有参数 11， 22，将emoji添加在节点名尾部（如：日本 IPLC 🇯🇵） | ✅    |
 | 节点重命名          | rename    | 可选，请先**urlencode** | 1. 格式为 rename=oldname@newname，多个rename可用+链接：<br />- 例如将 香港替换成HK，日本替换成JP，则参数为：香港@HK+日本@JP (记得拿去urlencode)<br /> 2. 在名字前/后增加字符，可分别用 A@ 跟 @B等单参数，例如：<br />- 在节点前增加 [SS]，节点名尾增加 [IPLC], 则rename参数为：[SS]@+@[IPLC]<br />1跟2当然是可以混用的，比如 “[SS]@+@[IPLC]+香港@HK+日本@JP” | ✅    |
+| 节点排序            | sort      | 可选                    | 参数为1，-1， 分别按节点名进行 **正序/逆序** 排列            | ✅    |
 
-> 完整示范：将dler的ss订阅链接转换，并只取其中名字含 “**日本**” 的节点，并添加 emoji，以及将节点名中的“日本”替换为“JP”，
+> **完整示范**：将 dler 的 ss订阅链接 转换，并只取其中名字含 “**日本**” 的节点，并添加 emoji，以及将节点名中的“日本”替换为“JP”，
 >
-> 0⃣️ sub订阅参数urlencode后为：sub=https%3A%2F%2Fdler.cloud%2Flink%2Fxxxx%3Fmu%3Dss
+> 0⃣️ sub 类型为 **type=ss**，订阅链接参数urlencode后为：sub=https%3A%2F%2Fdler.cloud%2Flink%2Fxxxx%3Fmu%3Dss
 >
-> 1⃣️ filter参数为 .*日本，urlencode后为：filter=.%2A%E6%97%A5%E6%9C%AC
+> 1⃣️ filter 参数为 .*日本，urlencode后为：filter=.%2A%E6%97%A5%E6%9C%AC
 >
-> 2⃣️ rename参数为 日本@JP ， urlencode后为：rename=%E6%97%A5%E6%9C%AC%40JP
+> 2⃣️ rename 参数为 日本@JP ， urlencode后为：rename=%E6%97%A5%E6%9C%AC%40JP
 >
-> 3⃣️ emoji参数为 emoji=2
+> 3⃣️ emoji 参数为 emoji=2
 >
 > 4⃣️ 每个参数间用 & 连接，最终合并成链接为：
 
 ```
-`https://dove.589669.xyz/sub2quanx?type=ss&tfo=1&udp=1&emoji=2&sub=https%3A%2F%2Fdler.cloud%2Flink%2Fxxxx%3Fmu%3Dss&filter=.%2A%E6%97%A5%E6%9C%AC&rename=%E6%97%A5%E6%9C%AC%40JP`
+https://dove.589669.xyz/sub2quanx?type=ss&tfo=1&udp=1&emoji=2&sub=https%3A%2F%2Fdler.cloud%2Flink%2Fxxxx%3Fmu%3Dss&filter=.%2A%E6%97%A5%E6%9C%AC&rename=%E6%97%A5%E6%9C%AC%40JP
 ```
 
 如果你想过滤多个参数，比如 **日本** 或者 韩国 可以使用  .*(日本|韩国)
@@ -90,13 +92,14 @@
 | Surge API           | 参数      | 说明                    | 要求                                                         | 状态 |
 | ------------------- | --------- | ----------------------- | ------------------------------------------------------------ | ---- |
 | 路径                | Mix2Surge | NA                      | https://dove.589669.xyz/Mix2Surge?                           | NA   |
-| 类型                | type      | 必须                    | ss/ssd/v2/surge   （其中，surge参数对conf托管跟list通用）    | ✅    |
+| 链接类型            | type      | 必须                    | ss/ssd/v2/surge   （其中，surge参数对conf托管跟list通用）    | ✅    |
 | 订阅(托管)链接      | sub       | 必须，请先**urlencode** | 务必先对链接**urlencode**，多个订阅用 + 号连接               | ✅    |
 | 正则过滤节点        | filter    | 可选，请先**urlencode** | 务必先对参数**urlencode**，从开头开始匹配，所以建议从  .* 开始 | ✅    |
 | v2订阅的header host | hd        | 可选                    | hd=1，0 （为解决某些v2ray订阅在surge中不可用的情况，为0时，忽略header参数） | ✅    |
 | UDP/TFO参数         | udp/tfo   | 可选                    | 仅对type为ss的类型有效（tfo=1/0，udp=1/0 来开启/关闭，默认关闭） | ✅    |
 | emoji 国家/地区符号 | emoji     | 可选                    | 参数为 -1(删除旗帜)，1，2(用于国行手机，解决无法显示台湾地区旗帜🇹🇼的问题)；<br />另有参数 11， 22，将emoji添加在节点名尾部（如：日本 IPLC 🇯🇵） | ✅    |
 | 节点重命名          | rename    | 可选，请先urlencode     | 1. 格式为 rename=oldname@newname，多个rename可用+链接：<br />- 例如将 香港替换成HK，日本替换成JP，则参数为：香港@HK+日本@JP (记得拿去urlencode)<br /> 2. 在名字前/后增加字符，可分别用 A@ 跟 @B等单参数，例如：<br />- 在节点前增加 [SS]，节点名尾增加 [IPLC], 则rename参数为：[SS]@+@[IPLC]<br />1跟2当然是可以混用的，比如 “[SS]@+@[IPLC]+香港@HK+日本@JP” | ✅    |
+| 节点排序            | sort      | 可选                    | 参数为1，-1， 分别按节点名进行 **正序/逆序** 排列            | ✅    |
 
 > 完整示范： 将某两个V2订阅合并转换成surge的list，并只选择其中的 **CHT ** 节点路线
 
@@ -112,7 +115,7 @@ https://dove.589669.xyz/Mix2Surge?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscri
 
 ### 0⃣️ 请咖啡☕️名单
 
-🙏感谢🙏
+🙏感谢🙏  **如果觉得有用，请大胆请喝咖啡☕️**
 
 - 鸡儿硬梆梆
 - 🐔哥｜法外 伉俪
@@ -126,8 +129,8 @@ https://dove.589669.xyz/Mix2Surge?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscri
 - 非主流 李克斯 关下门
 - yumemi
 - Zealson
-
-**如果觉得有用，请大胆请喝咖啡☕️**
+- 布
+- 好用的
 
 <img src="https://tva1.sinaimg.cn/large/006y8mN6gy1g7t6di3i9oj30gg0g240w.jpg" style="height:300px" />
 
