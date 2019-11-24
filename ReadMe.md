@@ -1,12 +1,21 @@
 ## I. 关于
 
-本API旨在将各种服务器订阅，转换成可用于 QuantumultX & Surge 两个优秀的iOS客户端的格式，具体来说：
+本API旨在将各种服务器订阅，转换成可用于 QuantumultX & Surge 两个优秀的iOS客户端的格式，后续可能会支持其它软件，如mellow ，clash等.
+
+目前已实现：
 
 - **QuantumultX**：
   - 从 ***SS订阅/SSD订阅/SSR订阅/V2rayN 订阅/Surge(conf&list)/QuanX*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名；
   - 将服务器订阅转换为 quantumult 的配置（含YouTube跟Netflix等基本分流）
+
 - **Surge**：
+
   - 从 ***Surge(conf&list)/SS订阅/SSD订阅/V2rayN订阅***，转换成 **Surge list**的格式链接，并提供正则过滤，多个订阅（托管）链接合并，以及emoji旗帜添加/删除，以及简单的节点重命名等
+
+- **Mellow**:
+
+  - 将V2RayN或者quantumultX格式的v2订阅，转换成mellow可用的配置文件，并提供节点正则过滤功能
+
 
 -----
 
@@ -21,6 +30,7 @@
 - 2019-11-03: rename 功能增强：节点名 前/后 增加字符
 - 2019-11-06: 增加将订阅转换成 QuantumultX 配置
 - 2019-11-09: 增加按节点名排序参数 sort
+- 2019-11-24: 增加vmess2mellow，暂支持VRayN以及QuantumultX类型的v2订阅 --> 神机规则版本的mellow配置
 
 ------
 
@@ -107,7 +117,28 @@ https://dove.589669.xyz/sub2quanx?type=ss&tfo=1&udp=1&emoji=2&sub=https%3A%2F%2F
 https://dove.589669.xyz/Mix2Surge?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscribe%2Fxxx%3Fmu%3Dav2%2Bhttps%3A%2F%2Fytoo.xyz%2Fmodules%2Fservers%2FV2raySocks%2Fosubscribe.php%3Fsid%3D372%26token%3Dxxxo&filter=.%2ACHT
 ```
 
+-----
 
+### C. Mellow 项目
+
+项目地址：<https://github.com/mellow-io/mellow>
+
+神机规则地址：<https://github.com/ConnersHua/Profiles/blob/master/Mellow/Pro.conf>
+
+API作用：将V2RayN订阅/quantumultX格式V2订阅，转换成mellow的conf配置（神机规则）
+
+| Mellow API   | 参数     | 说明 | 要求                                                         | 状态 |
+| ------------ | -------- | ---- | ------------------------------------------------------------ | ---- |
+| 路径         | V2Mellow | 必须 | https://dove.589669.xyz/V2Mellow?                            | ✅    |
+| 类型         | type     | 必须 | v2 或者 qx                                                   | ✅    |
+| 链接         | sub      | 必须 | 务必先对链接**urlencode**，多个订阅用 + 号连接               | ✅    |
+| 正则过滤节点 | filter   | 可选 | 务必先对参数**urlencode**，从开头开始匹配，所以建议从  .* 开始 | ✅    |
+
+> 完整示范：将dlercloud 的v2订阅，并只挑选其中的 PCCW 节点 
+
+```
+https://dove.589669.xyz/V2Mellow?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscribe%2FToken%3Fmu%3Dav2&filter=.%2APCCW
+```
 
 ---
 
