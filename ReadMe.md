@@ -14,8 +14,7 @@
 
 - **Mellow**:
 
-  - 将V2RayN或者quantumultX格式的v2订阅，转换成mellow可用的配置文件，并提供节点正则过滤功能
-
+  - 将V2RayN或者quantumultX格式的Vmess订阅链接，转换成Mellow可用的配置文件conf，并提供节点正则过滤功能，emoji地区旗帜，rename以及简单排序等功能
 
 -----
 
@@ -127,14 +126,19 @@ https://dove.589669.xyz/Mix2Surge?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscri
 
 API作用：将V2RayN订阅/quantumultX格式V2订阅，转换成mellow的conf配置（神机规则）
 
-| Mellow API   | 参数     | 说明 | 要求                                                         | 状态 |
-| ------------ | -------- | ---- | ------------------------------------------------------------ | ---- |
-| 路径         | V2Mellow | 必须 | https://dove.589669.xyz/V2Mellow?                            | ✅    |
-| 类型         | type     | 必须 | v2 或者 qx                                                   | ✅    |
-| 链接         | sub      | 必须 | 务必先对链接**urlencode**，多个订阅用 + 号连接               | ✅    |
-| 正则过滤节点 | filter   | 可选 | 务必先对参数**urlencode**，从开头开始匹配，所以建议从  .* 开始 | ✅    |
+| Mellow API          | 参数     | 说明                | 要求                                                         | 状态 |
+| ------------------- | -------- | ------------------- | ------------------------------------------------------------ | ---- |
+| 路径                | V2Mellow | 必须                | https://dove.589669.xyz/V2Mellow?                            | ✅    |
+| 类型                | type     | 必须                | v2 或者 qx                                                   | ✅    |
+| 链接                | sub      | 必须                | 务必先对链接**urlencode**，多个订阅用 + 号连接               | ✅    |
+| 正则过滤节点        | filter   | 可选                | 务必先对参数**urlencode**，从开头开始匹配，所以建议从  .* 开始 | ✅    |
+| emoji 国家/地区符号 | emoji    | 可选                | 参数为 -1(删除旗帜)，1，2(用于国行手机，解决无法显示台湾地区旗帜🇹🇼的问题)；<br />另有参数 11， 22，将emoji添加在节点名尾部（如：日本 IPLC 🇯🇵） | ✅    |
+| 节点重命名          | rename   | 可选，请先urlencode | 1. 格式为 rename=oldname@newname，多个rename可用+链接：<br />- 例如将 香港替换成HK，日本替换成JP，则参数为：香港@HK+日本@JP (记得拿去urlencode)<br /> 2. 在名字前/后增加字符，可分别用 A@ 跟 @B等单参数，例如：<br />- 在节点前增加 [SS]，节点名尾增加 [IPLC], 则rename参数为：[SS]@+@[IPLC]<br />1跟2当然是可以混用的，比如 “[SS]@+@[IPLC]+香港@HK+日本@JP” | ✅    |
+| 节点排序            | sort     | 可选                | 参数为1，-1， 分别按节点名进行 **正序/逆序** 排列            | ✅    |
 
 > 完整示范：将dlercloud 的v2订阅，并只挑选其中的 PCCW 节点 
+> ⚠️注意⚠️：此API与前两个不同的是，这个API中，rename 优先级高于 filter：
+> 所以你如果把“日本” rename成了 “JP” ，那过滤“日本”节点时，请用替换后的“JP”关键词作为filter参数
 
 ```
 https://dove.589669.xyz/V2Mellow?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscribe%2FToken%3Fmu%3Dav2&filter=.%2APCCW
