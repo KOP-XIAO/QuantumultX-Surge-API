@@ -27,6 +27,14 @@
 - 2019-12-02: 增加 Vmess2Quanx中  "tls-verification=true/false " 证书验证参数，cert=1/0
 - 2019-12-16: 增加对 clash的 proxy-provider 的支持
 
+**常见错误：**
+
+A. 代号 502: 服务器关机中
+
+B. 代号 500: 内部处理错误，可联系telegram-bot反馈：@Shawn_KOP_bot
+
+C. APP 内出现 invalid response：同上
+
 ------
 
 ----
