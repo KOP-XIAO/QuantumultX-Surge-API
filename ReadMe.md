@@ -26,8 +26,11 @@
 - 2019-11-24: 增加vmess2mellow，暂支持VRayN以及QuantumultX类型的v2订阅 --> 神机规则版本的mellow配置
 - 2019-12-02: 增加 Vmess2Quanx中  "tls-verification=true/false " 证书验证参数，cert=1/0
 - 2019-12-16: 增加对 clash的 proxy-provider 的支持
-- 2020-01-05: 新增三个不限制类型的API，**可不用type参数**，支持任意类型订阅链接的混搭（前提是对应app支持）
-  - all2quanx/all2surge/all2clash
+- 2020-01-05: 
+  - 新增三个不限制类型的API，**可不用type参数**，支持任意类型订阅链接的混搭（前提是对应app支持）
+    - all2quanx/all2surge/all2clash
+  - 增加subfilter过滤api，仅用于过滤ss/ssr/vmess订阅链接，不更改其类型
+    - https://dove.589669.xyz/subfilter?sub=订阅链接&filter=正则参数
 
 **常见错误：**
 
