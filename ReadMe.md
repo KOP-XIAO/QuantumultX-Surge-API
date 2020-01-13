@@ -115,7 +115,7 @@ https://dove.589669.xyz/sub2quanx?type=ss&tfo=1&udp=1&emoji=2&sub=https%3A%2F%2F
 | Surge API           | 参数      | 说明                                                | 要求                                                         | 状态 |
 | ------------------- | --------- | --------------------------------------------------- | ------------------------------------------------------------ | ---- |
 | 路径1               | Mix2Surge | NA                                                  | https://dove.589669.xyz/Mix2Surge?                           | NA   |
-| **路径2**           | all2quanx | 除了type参数，其它参数用法同**路径1**的示范完全一样 | https://dove.589669.xyz/all2surge?                           | NA   |
+| **路径2**           | all2surge | 除了type参数，其它参数用法同**路径1**的示范完全一样 | https://dove.589669.xyz/all2surge?                           | NA   |
 | 链接类型            | type      | 对路径1为必须                                       | ss/ssd/v2/surge   （其中，surge参数对conf托管跟list通用）    | ✅    |
 | 订阅(托管)链接      | sub       | 必须，请先**urlencode**                             | 务必先对链接**urlencode**，多个订阅用 + 号连接               | ✅    |
 | 正则过滤节点        | filter    | 可选，请先**urlencode**                             | 务必先对参数**urlencode**，从开头开始匹配，所以建议从  .* 开始 | ✅    |
