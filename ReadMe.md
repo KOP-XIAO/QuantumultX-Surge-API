@@ -54,7 +54,7 @@ C. APP 内出现 invalid response：同上
 
 | 服务器订阅转换API   | 参数                     | 说明                                                | 要求                                                         | 状态 |
 | ------------------- | ------------------------ | --------------------------------------------------- | ------------------------------------------------------------ | ---- |
-| **路径**            | all2quanx<br />all2surge | 除了type参数，其它参数用法同**路径1**的示范完全一样 | https://dove.589669.xyz/all2quanx?<br />https://dove.589669.xyz/all2surge? | NA   |
+| **路径**            | all2quanx<br />all2surge | 请先确认你的订阅服务器类型是否是surge/quanx支持的 | https://dove.589669.xyz/all2quanx?<br />https://dove.589669.xyz/all2surge? | NA   |
 | 订阅链接            | sub                      | 必须，请先**urlencode**                             | 务必先对链接**urlencode**，多个订阅用 + 连接                 | ✅    |
 | 正则过滤节点        | filter                   | 可选，请先**urlencode**                             | 务必先对参数**urlencode**，从开头开始匹配，所以建议从  .* 开始 | ✅    |
 | UDP强制更改         | udp                      | 可选                                                | 参数为1，或0 （默认为0，关闭），对surge/quanx/v2 类型无效    | ✅    |
