@@ -19,10 +19,6 @@
 -----
 
 **更新说明：**
-
-- 2019-11-03: rename 功能增强：节点名 前/后 增加字符
-- 2019-11-06: 增加将订阅转换成 QuantumultX 配置
-- 2019-11-09: 增加按节点名排序参数 sort
 - 2019-11-24: 增加vmess2mellow，暂支持VRayN以及QuantumultX类型的v2订阅 --> 神机规则版本的mellow配置
 - 2019-12-02: 增加 Vmess2Quanx中  "tls-verification=true/false " 证书验证参数，cert=1/0
 - 2019-12-16: 增加对 clash的 proxy-provider 的支持
@@ -115,7 +111,7 @@ https://dove.589669.xyz/all2Surge?sub=https%3A%2F%2Fdler.cloud%2Fsubscribe%2Fxxx
 
 
 
-### C. Mellow 项目
+### B. Mellow 项目
 
 项目地址：<https://github.com/mellow-io/mellow>
 
@@ -143,7 +139,7 @@ https://dove.589669.xyz/V2Mellow?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscrib
 
 
 
-###  D. Clash 项目
+###  C. Clash 项目
 
 项目地址：https://github.com/Dreamacro/clash
 
@@ -163,7 +159,7 @@ API 作用: 从 ***SS订阅/SSD订阅/V2rayN 订阅/Surge(conf&list)/QuanX*** �
 
 
 
-## E. 订阅过滤 API
+## D. 订阅过滤 API
 
 https://dove.589669.xyz/subfilter?sub=订阅链接(urlencode)&filter=正则参数
 
