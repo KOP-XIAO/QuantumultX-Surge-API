@@ -20,10 +20,6 @@
 
 **更新说明：**
 
-- 2019-11-03: rename 功能增强：节点名 前/后 增加字符
-- 2019-11-06: 增加将订阅转换成 QuantumultX 配置
-- 2019-11-09: 增加按节点名排序参数 sort
-- 2019-11-24: 增加vmess2mellow，暂支持VRayN以及QuantumultX类型的v2订阅 --> 神机规则版本的mellow配置
 - 2019-12-02: 增加 Vmess2Quanx中  "tls-verification=true/false " 证书验证参数，cert=1/0
 - 2019-12-16: 增加对 clash的 proxy-provider 的支持
 - 2020-01-05: 
@@ -32,6 +28,7 @@
   - 增加subfilter过滤api，仅用于过滤ss/ssr/vmess订阅链接，不更改其类型
     - https://dove.589669.xyz/subfilter?sub=订阅链接&filter=正则参数
 - 2020-02-10: 去除 sub2quanx，Mix2Surge 的说明，去除对type 参数的必须
+- 2020-02-14: all2quanx 支持 info 参数，保留订阅链接中的机场流量信息
 
 **常见错误：**
 
@@ -56,17 +53,18 @@ C. APP 内出现 invalid response：同上
 
 其中，surge 不支持 ssr类型订阅链接
 
-| 服务器订阅转换API   | 参数                     | 说明                                                | 要求                                                         | 状态 |
-| ------------------- | ------------------------ | --------------------------------------------------- | ------------------------------------------------------------ | ---- |
-| **路径**            | all2quanx<br />all2surge | 除了type参数，其它参数用法同**路径1**的示范完全一样 | https://dove.589669.xyz/all2quanx?<br />https://dove.589669.xyz/all2surge? | NA   |
-| 订阅链接            | sub                      | 必须，请先**urlencode**                             | 务必先对链接**urlencode**，多个订阅用 + 连接                 | ✅    |
-| 正则过滤节点        | filter                   | 可选，请先**urlencode**                             | 务必先对参数**urlencode**，从开头开始匹配，所以建议从  .* 开始 | ✅    |
-| UDP强制更改         | udp                      | 可选                                                | 参数为1，或0 （默认为0，关闭），对surge/quanx/v2 类型无效    | ✅    |
-| TFO强制更改         | tfo                      | 可选                                                | 参数为1，或0（默认为0，关闭），对surge/quanx类型无效         | ✅    |
-| emoji 国家/地区符号 | emoji                    | 可选                                                | 参数为 -1(删除旗帜)，1，2(用于国行手机，解决无法显示台湾地区旗帜🇹🇼的问题)；<br />另有参数 11， 22，将emoji添加在节点名尾部（如：日本 IPLC 🇯🇵） | ✅    |
-| 节点重命名          | rename                   | 可选，请先**urlencode**                             | 1. 格式为 rename=oldname@newname，多个rename可用+链接：<br />- 例如将 香港替换成HK，日本替换成JP，则参数为：香港@HK+日本@JP (记得拿去urlencode)<br /> 2. 在名字前/后增加字符，可分别用 A@ 跟 @B等单参数，例如：<br />- 在节点前增加 [SS]，节点名尾增加 [IPLC], 则rename参数为：[SS]@+@[IPLC]<br />1跟2当然是可以混用的，比如 “[SS]@+@[IPLC]+香港@HK+日本@JP” | ✅    |
-| 节点排序            | sort                     | 可选                                                | 参数为1，-1， 分别按节点名进行 **正序/逆序** 排列            | ✅    |
-| 证书验证            | cert                     | 可选                                                | 参数为1/0， 默认留空为1，即  "tls-verification=true "        | ✅    |
+| 服务器订阅转换API   | 参数                     | 说明                    | 要求                                                         | 状态 |
+| ------------------- | ------------------------ | ----------------------- | ------------------------------------------------------------ | ---- |
+| **路径**            | all2quanx<br />all2surge | 支持的类型见上面说明    | https://dove.589669.xyz/all2quanx?<br />https://dove.589669.xyz/all2surge? | NA   |
+| 订阅链接            | sub                      | 必须，请先**urlencode** | 务必先对链接**urlencode**，多个订阅用 + 连接                 | ✅    |
+| 正则过滤节点        | filter                   | 可选，请先**urlencode** | 务必先对参数**urlencode**，从开头开始匹配，所以建议从  .* 开始 | ✅    |
+| UDP强制更改         | udp                      | 可选                    | 参数为1，或0 （默认为0，关闭），对surge/quanx/v2 类型无效    | ✅    |
+| TFO强制更改         | tfo                      | 可选                    | 参数为1，或0（默认为0，关闭），对surge/quanx类型无效         | ✅    |
+| emoji 国家/地区符号 | emoji                    | 可选                    | 参数为 -1(删除 emoji旗帜)；<br />1，2 (用于国行手机，解决无法显示台湾地区旗帜🇹🇼的问题)节点名前添加旗帜(如：🇨🇳️ 中国北京 BGP)；<br /> 11， 22，将emoji添加在节点名尾部（如：日本 IPLC 🇯🇵） | ✅    |
+| 节点重命名          | rename                   | 可选，请先**urlencode** | 1. 格式为 rename=oldname@newname，多个rename可用+链接：<br />- 例如将 香港替换成HK，日本替换成JP，则参数为：香港@HK+日本@JP (记得拿去urlencode)<br /> 2. 在名字前/后增加字符，可分别用 A@ 跟 @B等单参数，例如：<br />- 在节点前增加 [SS]，节点名尾增加 [IPLC], 则rename参数为：[SS]@+@[IPLC]<br />1跟2当然是可以混用的，比如 “[SS]@+@[IPLC]+香港@HK+日本@JP” | ✅    |
+| 节点排序            | sort                     | 可选                    | 参数为1，-1， 分别按节点名进行 **正序/逆序** 排列            | ✅    |
+| 证书验证            | cert                     | 可选（quanx 专有）      | 参数为1/0， 默认留空为1，即  "tls-verification=true "        | ✅    |
+| 订阅流量信息        | info                     | 可选（quanx 专有）      | 参数为 1/0，默认为0<br />为 1时，会保留订阅 header 中的流量跟套餐信息(如有的话) | ✅️    |
 
 > **完整示范**：将 dler 的 ss订阅链接 转换，并只取其中名字含 “**日本**” 的节点，并添加 emoji，以及将节点名中的“日本”替换为“JP”，
 >
@@ -79,6 +77,8 @@ C. APP 内出现 invalid response：同上
 > 3⃣️ emoji 参数为 emoji=2
 >
 > 4⃣️ 每个参数间用 & 连接，最终合并成链接为：
+>
+> 5⃣️ 将最终链接填入 QuantumultX 的节点订阅(引用)
 
 ```
 https://dove.589669.xyz/all2quanx?tfo=1&udp=1&emoji=2&sub=https%3A%2F%2Fdler.cloud%2Flink%2Fxxxx%3Fmu%3Dss&filter=.%2A%E6%97%A5%E6%9C%AC&rename=%E6%97%A5%E6%9C%AC%40JP
@@ -86,8 +86,10 @@ https://dove.589669.xyz/all2quanx?tfo=1&udp=1&emoji=2&sub=https%3A%2F%2Fdler.clo
 
 > **完整示范 B**： 将某两个V2订阅合并转换成surge的list，并只选择其中的 **CHT ** 节点路线
 
+然后通过 surge 的 policy-path 外部资源导入
+
 ```
-https://dove.589669.xyz/all2Surge?sub=https%3A%2F%2Fdler.cloud%2Fsubscribe%2Fxxx%3Fmu%3Dav2%2Bhttps%3A%2F%2Fytoo.xyz%2Fmodules%2Fservers%2FV2raySocks%2Fosubscribe.php%3Fsid%3D372%26token%3Dxxxo&filter=.%2ACHT
+https://dove.589669.xyz/all2surge?sub=https%3A%2F%2Fdler.cloud%2Fsubscribe%2Fxxx%3Fmu%3Dav2%2Bhttps%3A%2F%2Fytoo.xyz%2Fmodules%2Fservers%2FV2raySocks%2Fosubscribe.php%3Fsid%3D372%26token%3Dxxxo&filter=.%2ACHT
 ```
 
 如果你想过滤多个参数，比如 **日本** 或者 韩国 可以使用  .*(日本|韩国)
@@ -115,7 +117,7 @@ https://dove.589669.xyz/all2Surge?sub=https%3A%2F%2Fdler.cloud%2Fsubscribe%2Fxxx
 
 
 
-### C. Mellow 项目
+### B. Mellow 项目
 
 项目地址：<https://github.com/mellow-io/mellow>
 
@@ -143,7 +145,7 @@ https://dove.589669.xyz/V2Mellow?type=v2&sub=https%3A%2F%2Fdler.cloud%2Fsubscrib
 
 
 
-###  D. Clash 项目
+###  C. Clash 项目
 
 项目地址：https://github.com/Dreamacro/clash
 
