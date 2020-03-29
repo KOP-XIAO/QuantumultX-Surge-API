@@ -1,11 +1,11 @@
 ## I. 关于
 
-本API旨在将各种服务器订阅，转换成可用于 QuantumultX & Surge 两个优秀的iOS客户端的格式，以及全平台的mellow ，clash等优秀代理工具.
+本API旨在将各种服务器订阅，转换成可用于 QuantumultX & Surge 两个优秀的iOS客户端的格式，以及（全）平台的mellow ，clash等优秀代理工具.
 
 目前已实现功能：
 
 - **QuantumultX**：
-  - 从 ***SS订阅/SSD订阅/SSR订阅/V2rayN 订阅/Surge(conf&list)/QuanX*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名；
+  - 从 ***SS订阅/SSD订阅/SSR订阅/V2rayN 订阅/Surge(conf&list)/QuanX*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO/tls1.3参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名；
   - 将服务器订阅转换为 quantumult 的配置（含YouTube跟Netflix等基本分流）
 - **Surge**：
 
@@ -34,6 +34,8 @@ B. 代号 500: 内部处理错误，可联系telegram-bot反馈：https://t.me/S
  - 介意隐私，怕节点被偷的大佬，以及只会说 “怎么不行啊” 的患者，⚠️⚠️勿扰
 
 C. APP 内出现 invalid response：同上
+
+D. 请勿咨询如何使用等类似问题
 
 ------
 
