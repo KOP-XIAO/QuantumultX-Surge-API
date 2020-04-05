@@ -5,11 +5,11 @@
 目前已实现功能：
 
 - **QuantumultX**：
-  - 从 ***SS订阅/SSD订阅/SSR订阅/V2rayN 订阅/Surge(conf&list)/QuanX*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO/tls1.3参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名；
+  - 从 ***SS订阅/SSD订阅/SSR订阅/V2rayN 订阅/Surge(conf&list)/QuanX/trojan*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO/tls1.3参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名；
   - 将服务器订阅转换为 quantumult 的配置（含YouTube跟Netflix等基本分流）
 - **Surge**：
 
-  - 从 ***Surge(conf&list)/SS订阅/SSD订阅/V2rayN订阅***，转换成 **Surge list**的格式链接，并提供正则过滤，多个订阅（托管）链接合并，以及emoji旗帜添加/删除，以及简单的节点重命名等
+  - 从 ***Surge(conf&list)/SS订阅/SSD订阅/V2rayN订阅/trojan***，转换成 **Surge list**的格式链接，并提供正则过滤，多个订阅（托管）链接合并，以及emoji旗帜添加/删除，以及简单的节点重命名等
 - **Mellow**:
 
   - 将V2RayN或者quantumultX格式的Vmess订阅链接，转换成Mellow可用的配置文件conf，并提供节点正则过滤功能，emoji地区旗帜，rename以及简单排序等功能
@@ -23,6 +23,7 @@
 - 2020-02-14: all2quanx 支持 info 参数，保留订阅链接中的机场流量信息
 - 2020-03-02: 增加 in & out 参数，用于过滤节点，方便不会使用正则参数的同学
 - 2020-03-29: 增加 tls13 参数，用于开启 quanx、surge 的 tls13=true
+- 2020-04-05: 增加 trojan 订阅的转换（由于 trojan 也没官方订阅格式，所以可能有错误）
 
 **常见错误：**
 
