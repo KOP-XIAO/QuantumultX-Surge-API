@@ -2,6 +2,8 @@
 
 本API旨在将各种服务器订阅，转换成可用于 QuantumultX & Surge 两个优秀的iOS客户端的格式，以及（全）平台的mellow ，clash等优秀代理工具.
 
+> API 以及 QuantumultX 教程更新相关信息，可以订阅此 **telegram channel**: https://t.me/QuanX_API
+
 目前已实现功能：
 
 - **QuantumultX**：
