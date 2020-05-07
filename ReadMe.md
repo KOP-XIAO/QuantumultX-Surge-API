@@ -26,6 +26,9 @@
 - 2020-03-02: 增加 in & out 参数，用于过滤节点，方便不会使用正则参数的同学
 - 2020-03-29: 增加 tls13 参数，用于开启 quanx、surge 的 tls13=true
 - 2020-04-05: 增加 trojan 订阅的转换（由于 trojan 也没官方订阅格式，所以可能有错误）
+- 2020-04-20: 增加 surge rule-set 到 Quantumult X 分流规则的转换“
+  - 路径为https://dove.589669.xyz/Rule2QX?，参数为 sub，policy
+  - 示范：https://dove.589669.xyz/Rule2QX?&sub=https://anti-ad.win/surge.txt&policy=reject
 
 **常见错误：**
 
