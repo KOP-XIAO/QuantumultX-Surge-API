@@ -51,7 +51,7 @@ D. 请勿咨询如何使用等类似问题
 
 ####  1. 服务器订阅转换API
 
-其中，surge 不支持 ssr类型订阅链接
+其中，surge 不支持 ssr类型订阅链接    
 Clash 项目地址：https://github.com/Dreamacro/clash
 
 | 服务器订阅转换API   | 参数                                    | 说明                    | 要求                                                         | 状态 |
