@@ -25,7 +25,7 @@
   - 示范：https://dove.589669.xyz/Rule2QX?&sub=https://anti-ad.win/surge.txt&policy=reject
 - 2020-07-24: all2clash 支持 ssr 类型的转换
 - 2020-07-25: 新增两个参数：
-  -  regdel，利用正则表达式删除节点名中字符；
+  - regdel，利用正则表达式删除节点名中字符；
   - sort=x，节点随机排序
 
 **常见错误：**
