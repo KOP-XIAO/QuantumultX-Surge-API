@@ -29,6 +29,11 @@
   - sort=x，节点随机排序
 - 2020-09-15: replace 参数，正则替换, +号连接多个
   - replace=(xx.*?a)yy@$1zz
+- 2020-09-20: sort 参数增加指定规则排序
+  -  指定规则可以是正则表达式或简单关键词, 用"<" 跟 ">" 表示顺序
+  - sort=🇭🇰>🇸🇬>🇯🇵>🇺🇸 , 靠前排序
+  - sort=IEPL<IPLC<BGP , 靠后排序
+  - 关键词不限于节点名, 可以是节点信息的任意参数
 
 **常见错误：**
 
@@ -67,7 +72,7 @@ Clash 项目地址：https://github.com/Dreamacro/clash
 | 节点重命名          | rename                                  | 可选，请先**urlencode** | 1. 格式为 rename=oldname@newname，多个rename可用+链接：<br />- 例如将 香港替换成HK，日本替换成JP，则参数为：香港@HK+日本@JP (记得拿去urlencode)<br /> 2. 在名字前/后增加字符，可分别用 A@ 跟 @B等单参数，例如：<br />- 在节点前增加 [SS]，节点名尾增加 [IPLC], 则rename参数为：[SS]@+@[IPLC]<br />1跟2当然是可以混用的，比如 “[SS]@+@[IPLC]+香港@HK+日本@JP” | ✅    |
 | 节点名字符删除      | Regdel                                  | 可选，请先**urlencode** | regdel=香.*IPLC                                              | ✅    |
 | 正则替换            | replace                                 | 可选，请先**urlencode** | 对整段信息生效(不仅是节点名)，replace=(relay.*=.*?)true@$1false | ✅    |
-| 节点排序            | sort                                    | 可选                    | 参数为1，-1，x,  分别按节点名进行 **正序/逆序/随机** 排列    | ✅    |
+| 节点排序            | sort                                    | 可选                    | 参数为1，-1，x，指定规则  分别按节点名进行 **正序/逆序/随机/指定规则** 排列<br />sort=🇭🇰>🇸🇬>🇯🇵>🇺🇸 , 靠前排序<br />sort=IEPL<IPLC<BGP , 靠后排序 | ✅    |
 | 证书验证            | cert                                    | 可选（仅限Quanx）       | 参数为1/0， 默认留空为1，即  "tls-verification=true "        | ✅    |
 | Tls1.3开启          | tls13                                   | 可选                    | 参数为 1 时，开启 tls1.3，即tls13=true                       | ✅    |
 | 订阅流量信息        | info                                    | 可选（仅限Quanx ）      | 参数为 1/0，默认为0<br />为 1时，会保留订阅 header 中的流量跟套餐信息(如有的话) | ✅️    |
