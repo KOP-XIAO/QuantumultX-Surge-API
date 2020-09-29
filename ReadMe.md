@@ -31,6 +31,7 @@
   - sort=IEPL<IPLC<BGP , 靠后排序
   - 关键词不限于节点名, 可以是节点信息的任意参数
 - 2020-09-22: 新增 QuantumultX/Clash 格式节点为源类型的转化
+- 2020-09-29: 提供在线版转换  https://dove.589669.xyz/web
 
 **常见错误：**
 
@@ -54,6 +55,10 @@ D. 请勿咨询如何使用等类似问题
 ### A. Quantumult X / Surge/ Clash
 
 ####  1. 服务器订阅转换API
+
+
+
+> 在线网页版本：  https://dove.589669.xyz/web
 
 其中，surge 不支持 ssr类型订阅链接    
 Clash 项目地址：https://github.com/Dreamacro/clash
