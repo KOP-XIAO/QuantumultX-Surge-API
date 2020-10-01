@@ -3,16 +3,16 @@
 本API旨在将各种服务器订阅，转换成可用于 QuantumultX & Surge 两个优秀的iOS客户端的格式，以及（全）平台的mellow ，clash等优秀代理工具.
 
 > API 以及 QuantumultX 教程更新相关信息，可以订阅此 **telegram channel**: https://t.me/QuanX_API
+>
+> 网页版： https://dove.589669.xyz/web
 
 目前已实现功能：
 
-- **QuantumultX**：
-  - 从 ***SS(D/R)订阅/V2rayN 订阅/Surge(conf&list)/QuanX/Clash/trojan*** 转换成 **QuantumultX** 格式的订阅，并提供正则过滤，以及UDP/TFO/tls1.3参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名；
-  - 将服务器订阅转换为 quantumult 的配置（含YouTube跟Netflix等基本分流）
-- **Surge**：
-  - 从 ***Surge(conf&list)/SS(D)订阅/V2rayN订阅/QuanX/Clash/trojan***，转换成 **Surge list**的格式链接，并提供正则过滤，多个订阅（托管）链接合并，以及emoji旗帜添加/删除，以及简单的节点重命名等
-- **Clash**：
-  - 从 ***SS(D/R)订阅/V2rayN订阅/Surge(conf&list)/QuanX/Clash/trojan*** 转换成 Clash 格式的 proxy-provider，并提供正则过滤，以及UDP/TFO参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名；
+- **QuantumultX / Surge / Clash**：
+  - 从 ***SS(D/R)订阅/V2rayN 订阅/Surge(conf&list)/QuanX/Clash/trojan*** 转换成 **QuantumultX / Surge / Clash** 格式的订阅(node-list / proxy provider)，并提供正则过滤，以及UDP/TFO/tls1.3参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名；
+  - 将服务器订阅转换为 Quantumult X 的配置（含YouTube跟Netflix等基本分流）
+  - 其中，surge 不支持 ssr类型订阅链接    
+  - Clash 项目地址：https://github.com/Dreamacro/clash
 - **Mellow**：
   - 将V2RayN或者quantumultX格式的Vmess订阅链接，转换成Mellow可用的配置文件conf，并提供节点正则过滤功能，emoji地区旗帜，rename以及简单排序等功能
 
@@ -20,11 +20,6 @@
 
 **更新说明：**
 
-- 2020-07-25: 新增两个参数：
-  - regdel，利用正则表达式删除节点名中字符；
-  - sort=x，节点随机排序
-- 2020-09-15: replace 参数，正则替换, +号连接多个
-  - replace=(xx.*?a)yy@$1zz
 - 2020-09-20: sort 参数增加指定规则排序
   -  指定规则可以是正则表达式或简单关键词, 用"<" 跟 ">" 表示顺序
   - sort=🇭🇰>🇸🇬>🇯🇵>🇺🇸 , 靠前排序
@@ -55,13 +50,6 @@ D. 请勿咨询如何使用等类似问题
 ### A. Quantumult X / Surge/ Clash
 
 ####  1. 服务器订阅转换API
-
-
-
-> 在线网页版本：  https://dove.589669.xyz/web
-
-其中，surge 不支持 ssr类型订阅链接    
-Clash 项目地址：https://github.com/Dreamacro/clash
 
 | 服务器订阅转换API   | 参数                                    | 说明                    | 要求                                                         | 状态 |
 | ------------------- | --------------------------------------- | ----------------------- | ------------------------------------------------------------ | ---- |
