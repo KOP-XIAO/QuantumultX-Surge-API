@@ -1,0 +1,64 @@
+summary {
+    user-select: none;
+    outline: 0;
+}
+details ::-webkit-details-marker {
+    
+    color: gray;
+  
+    display: none;
+}
+
+details:hover summary::-webkit-details-marker:hover {
+color:red;
+background:white;
+}
+
+details summary::after{
+  content: "";
+   position: absolute;
+   width: 1em;
+    height: 1em;
+    margin:.2rem 0 0.5ch;
+     background: url(svg.svg) no-repeat ;
+     background-size: 100% 100%;
+    transition: transform .2s;
+}
+[open] summary::after{
+   transform:rotate(90deg) ;
+
+}
+[open] summary,
+summary:hover {
+    background-color: rgba(195, 155, 211, 0.7);
+    box-shadow: inset 1px 0 #ddd, inset -1px 0 #ddd;
+    max-height: 150px;
+}
+.box a{
+   display:block;
+   text-decoration: none;
+    color: currentcolor
+}
+.box a:hover {
+    background-color: #f0f0f0;
+}
+.box {
+      position: absolute;
+    /* border: 1px solid #ddd; */
+    background-color: #fff;
+    min-width: 100px;
+    /* padding: 5px 0; */
+    /* margin-top: -1px; */
+    max-height: 0;
+    /* margin: 0 0 1rem; */
+    overflow: hidden;
+}
+details + dl {
+    max-height: 0;
+    transition: all .25s;
+    margin: 0 0 1rem;
+    overflow: hidden;
+}
+[open] + dl{
+  max-height: 100px;
+}
