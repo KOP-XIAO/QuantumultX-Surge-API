@@ -10,9 +10,7 @@
 
 - **QuantumultX / Surge / Clash**：
   - 从 ***SS(D/R)订阅/V2rayN 订阅/Surge(conf&list)/QuanX/Clash/trojan*** 转换成 **QuantumultX / Surge / Clash** 格式的订阅(node-list / proxy provider)，并提供正则过滤，以及UDP/TFO/tls1.3参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名；
-  - 将服务器订阅转换为 Quantumult X 的配置（含YouTube跟Netflix等基本分流）
-  - 其中，surge 不支持 ssr类型订阅链接    
-  - Clash 项目地址：https://github.com/Dreamacro/clash
+  - 将服务器订阅转换为 **Quantumult X/Surge/Clash** 的配置（基于神机规则分流项目)
 - **Mellow**：
   - 将V2RayN或者quantumultX格式的Vmess订阅链接，转换成Mellow可用的配置文件conf，并提供节点正则过滤功能，emoji地区旗帜，rename以及简单排序等功能
 
@@ -27,6 +25,7 @@
   - 关键词不限于节点名, 可以是节点信息的任意参数
 - 2020-09-22: 新增 QuantumultX/Clash 格式节点为源类型的转化
 - 2020-09-29: 提供在线版转换  https://dove.589669.xyz/web
+- 2020-10-07: 提供完整配置转换模式 (**Quantumult X - Surge -Clash**)
 
 **常见错误：**
 
