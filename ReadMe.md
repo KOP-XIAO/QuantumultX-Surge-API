@@ -26,6 +26,7 @@
 - 2020-09-22: 新增 QuantumultX/Clash 格式节点为源类型的转化
 - 2020-09-29: 提供在线版转换  https://dove.589669.xyz/web
 - 2020-10-07: 提供完整配置转换模式 (**Quantumult X - Surge -Clash**)
+- 2020-11-15: 增加 Quantumult X-Task-Gallery 的转换
 
 **常见错误：**
 
