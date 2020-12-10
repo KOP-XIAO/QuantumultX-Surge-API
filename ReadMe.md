@@ -1,18 +1,21 @@
 ## I. 关于
 
-本API旨在将各种服务器订阅，转换成可用于 QuantumultX & Surge 两个优秀的iOS客户端的格式，以及（全）平台的mellow ，clash等优秀代理工具.
+本 API 服务旨在将各种服务器订阅，转换成可用于 QuantumultX & Surge 两个优秀的iOS客户端的格式，以及（全）平台的mellow ，Clash等优秀代理工具.
 
 > API 以及 QuantumultX 教程更新相关信息，可以订阅此 **telegram channel**: https://t.me/QuanX_API
 >
-> 网页版： https://dove.589669.xyz/web
+> API 网页版地址： https://dove.589669.xyz/web
 
-目前已实现功能：
+已有功能：
 
 - **QuantumultX / Surge / Clash**：
-  - 从 ***SS(D/R)订阅/V2rayN 订阅/Surge(conf&list)/QuanX/Clash/trojan*** 转换成 **QuantumultX / Surge / Clash** 格式的订阅(node-list / proxy provider)，并提供正则过滤，以及UDP/TFO/tls1.3参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名；
-  - 将服务器订阅转换为 **Quantumult X/Surge/Clash** 的配置（基于神机规则分流项目)
+  - 从 ***SS(D/R)订阅/V2rayN 订阅/Surge(conf&list)/QuanX/Clash/trojan*** 转换成 **QuantumultX / Surge / Clash** 格式的订阅(node-list / proxy provider)，并提供正则过滤，以及UDP/TFO/tls1.3参数的修改，以及多个订阅（托管）的合并等，以及emoji旗帜添加/删除，以及简单的节点重命名、正则替换；
+  - 将服务器订阅转换为 **Quantumult X/Surge/Clash** 的配置（基于神机规则分流项目)；
+  - 转换 Quantumult X 的 task-gallery 格式
 - **Mellow**：
   - 将V2RayN或者quantumultX格式的Vmess订阅链接，转换成Mellow可用的配置文件conf，并提供节点正则过滤功能，emoji地区旗帜，rename以及简单排序等功能
+- **订阅：**
+  - 订阅筛选（不改变原始格式类型）
 
 -----
 
@@ -160,7 +163,9 @@ https://dove.589669.xyz/subfilter?sub=订阅链接(urlencode)&filter=正则参�
 
 ### 0⃣️ 请咖啡☕️名单
 
-🙏感谢🙏  **如果觉得有用，请大胆请喝咖啡☕️**
+​		🙏感谢🙏  
+
+​		**如果觉得有用，请大胆请喝咖啡☕️**
 
 - 鸡儿硬梆梆
 - 🐔哥｜法外 伉俪
